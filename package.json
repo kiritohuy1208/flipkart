@@ -1,0 +1,29 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "\"mern stack backend\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.server.js",
+    "debug": "nodemon --inspect ./src/index.server.js"
+  },
+  "author": "Huy Tô",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.3",
+    "multer": "^1.4.2",
+    "multer-azure-storage": "^0.2.0",
+    "shortid": "^2.2.16",
+    "slugify": "^1.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
