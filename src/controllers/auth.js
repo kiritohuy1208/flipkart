@@ -5,7 +5,7 @@ const shortid = require("shortid");
 
 const generateJwtToken = (_id) => {
   return jwt.sign({ _id }, process.env.JWT_SECRET, {
-    expiresIn: "1d",
+    expiresIn: "7d",
   });
 };
 //   const generateJwtToken = (_id, role) => {
