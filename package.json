@@ -4,8 +4,7 @@
   "description": "\"mern stack backend\"",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/index.server.js",
-    "debug": "node --inspect ./src/index.server.js"
+    "start": "node ./src/index.server.js"
   },
   "author": "Huy Tô",
   "license": "ISC",
