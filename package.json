@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "\"mern stack backend\"",
   "main": "index.js",
-  "engine" : {
+  "engine": {
     "node": "15.11.0 ",
     "npm": "7.6.0"
-    },
+  },
   "scripts": {
     "start": "node ./src/index.server.js"
   },
