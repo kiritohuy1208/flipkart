@@ -108,7 +108,9 @@ exports.getCartItems = (req, res) => {
             qty: item.quantity,
           };
         });
-        res.status(200).json({ cartItems });
+        return res.status(200).json({ cartItems });
+      }else{
+        return res.status(400).json({message: "user have yet cart"})
       }
     });
   //}
