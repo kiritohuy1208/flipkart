@@ -39,9 +39,10 @@ app.use("/api", addressRoute);
 app.use("/api", orderRoute);
 app.use("/api", orderAdminRoute);
 
+const PORT = process.env.Port || 3000;
 app.get("/", (req, res, next) => {
-  res.send("Server web Flipkart start on port :" + process.env.Port || 8080);
+  res.send("Server web Flipkart start on port :" + PORT);
 });
-app.listen(process.env.Port || 8080, () => {
-  console.log("Server start on port :" + process.env.Port || 8080);
+app.listen(PORT, () => {
+  console.log("Server start on port :" + PORT);
 });
