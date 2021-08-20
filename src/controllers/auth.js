@@ -23,7 +23,7 @@ exports.signin = (req, res, next) => {
       if (isPassword) {
         // const token = generateJwtToken(user._id, user.role);
         const token = generateJwtToken(user._id);
-        res.cookie("token", token, { expiresIn: "1d" });
+        res.cookie("token", token, { expiresIn: "7d" });
         const { _id, firstName, lastName, email, role, fullName } = user;
         return res.status(200).json({
           message: "Sign in successfully",
