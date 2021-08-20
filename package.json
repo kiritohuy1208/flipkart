@@ -8,6 +8,7 @@
     "npm": "7.6.0"
   },
   "scripts": {
+    "postinstall": "npm run build",
     "start": "node ./src/index.server.js"
   },
   "author": "Huy Tô",
