@@ -1,1 +1,1 @@
-web:node ./src/index.server.js
+web: bundle exec thin start -p $PORT
