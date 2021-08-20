@@ -4,7 +4,7 @@
   "description": "\"mern stack backend\"",
   "main": "index.js",
   "engine" : {
-    "node": "v15.11.0 ",
+    "node": "15.11.0 ",
     "npm": "7.6.0"
     },
   "scripts": {
