@@ -8,8 +8,7 @@
     "npm": "7.6.0"
   },
   "scripts": {
-   
-    "start": "nodemon ./src/index.server.js"
+    "start": "node ./src/index.server.js"
   },
   "author": "Huy Tô",
   "license": "ISC",
