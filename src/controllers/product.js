@@ -32,16 +32,6 @@ exports.addProduct = async (req, res, next) => {
       error,
     });
   }
-  // product.save((error,product)=>{
-  //     if(error){
-  //         return res.status(400).json({
-  //             error
-  //         })
-  //     }
-  //     if(product){
-  //         return res.status(201).json({ product, files: req.files });
-  //     }
-  // })
 };
 exports.getProducts = async (req, res) => {
   try {
@@ -149,5 +139,35 @@ exports.deleteProductById = (req, res) => {
     });
   } else {
     return res.status(400).json({ error: "Params required" });
+  }
+};
+exports.getCommentByProduct = async (req, res) => {
+  try {
+    const { productId } = req.params;
+    const comments = await Product.findById(productId)
+      .select("review")
+      .populate({ path: "review.userId", select: "firstName lastName " });
+
+    res.status(200).json({ comments });
+  } catch (error) {
+    res.status(400).json({ error: "Cannot get comment" });
+  }
+};
+exports.addComment = async (req, res) => {
+  try {
+    const { comment, productId } = req.body;
+    const userId = req.user.id;
+    const commentRes = await Product.findOneAndUpdate(
+      { _id: productId },
+      {
+        $push: {
+          review: { userId, review: comment },
+        },
+      },
+      { new: true, upsert: true }
+    );
+    res.status(200).json({ commentRes });
+  } catch (err) {
+    res.status(400).json({ error: "Something error" });
   }
 };

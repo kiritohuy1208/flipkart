@@ -6,6 +6,8 @@ const {
   getProductsBySlug,
   getDetailProduct,
   deleteProductById,
+  addComment,
+  getCommentByProduct,
 } = require("../controllers/product");
 const {
   verifyAdminMiddleware,
@@ -29,4 +31,6 @@ router.route("/product/:id").get(getDetailProduct);
 router
   .route("/product/deleteProductById")
   .delete(requiredSignin, verifyAdminMiddleware, deleteProductById);
+router.route("/product/comments/post").post(requiredSignin, addComment);
+router.route("/product/comments/:productId").get(getCommentByProduct);
 module.exports = router;

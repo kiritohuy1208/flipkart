@@ -9,7 +9,7 @@
   },
   "scripts": {
    
-    "start": "node ./src/index.server.js"
+    "start": "nodemon ./src/index.server.js"
   },
   "author": "Huy Tô",
   "license": "ISC",
